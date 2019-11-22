@@ -4,14 +4,7 @@ import random
 from django.http import HttpResponse
 
 config = {
-    'apiKey': "AIzaSyCCLY-nqO0pzoT_xFJdwistoeJZmMKiVJU",
-    'authDomain': "apidatabase-450ae.firebaseapp.com",
-    'databaseURL': "https://apidatabase-450ae.firebaseio.com",
-    'projectId': "apidatabase-450ae",
-    'storageBucket': "apidatabase-450ae.appspot.com",
-    'messagingSenderId': "344310318000",
-    'appId': "1:344310318000:web:9b08fa0953f3717f230c75",
-    'measurementId': "G-V5QWH6W7GE"
+    ##Add your firebase config here
 
 }
 
