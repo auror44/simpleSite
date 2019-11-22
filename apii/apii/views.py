@@ -32,8 +32,14 @@ def postsign(request):
     user = auth.sign_in_with_email_and_password(email, passw)
     session_id = user['idToken']
     request.session['uid'] = str(session_id)
+    api_token = bp.create_token()
+    supported_banks = bp.supported_banks(api_token)
+    available_banks = bp.available_banks(supported_banks)  # Available banks
+    selected_bank = available_banks[0]
+    session_id = bp.create_session(selected_bank, api_token)
+    output = bp.get_consent(api_token, session_id)
 
-    return render(request, 'welcome.html', {"e": email})
+    return render(request, 'welcome.html', {"e": email,'link':output})
 
 
 def signup(request):
@@ -71,10 +77,5 @@ def dashboard(request):
 
 def welcome(request):
 
-    api_token = bp.create_token()
-    supported_banks = bp.supported_banks(api_token)
-    available_banks = bp.available_banks(supported_banks)  # Available banks
-    selected_bank = available_banks[0]
-    session_id = bp.create_session(selected_bank, api_token)
-    output = bp.get_consent(api_token, session_id)
+
     return render(request, 'welcome.html', {'link': output})
