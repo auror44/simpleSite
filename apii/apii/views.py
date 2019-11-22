@@ -78,4 +78,4 @@ def dashboard(request):
 def welcome(request):
 
 
-    return render(request, 'welcome.html', {'link': output})
+    return render(request, 'welcome.html')
