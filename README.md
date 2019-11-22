@@ -1,5 +1,5 @@
 # simpleSite
-A simple site to sign up and retrieve bank information from neonominics.io.Uses google firebase as database. Sign up, sigh in and retrieval of bank account information are the features.
+A simple site to sign up and retrieve bank information from neonominics.io.Uses google firebase as database. Sign up, sign in and retrieval of bank account information are the features.
 
 HOW TO
 
